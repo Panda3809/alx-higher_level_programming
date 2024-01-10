@@ -5,11 +5,11 @@ def roman_to_int(roman_string):
     sumtot = 0
     prevval = 1000
     romandict = {"I": 1, "V": 5, "X": 10, "L": 50,
-            "C": 100, "D": 500, "M": 1000}
+                 "C": 100, "D": 500, "M": 1000}
     numbers = [romandict[x] for x in roman_string]
     for x in numbers:
         if x > prevval:
             sumtot -= prevval * 2
-            prevval = x
-            sumtot += x
+        prevval = x
+        sumtot += x
     return sumtot
